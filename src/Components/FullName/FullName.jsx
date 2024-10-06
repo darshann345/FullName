@@ -1,35 +1,48 @@
-import React,{useState} from 'react';
-const FullName = () =>{
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [fullName, setFullName] = useState('');  
+import React, { useState } from 'react';
 
+const FullName = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (firstName && lastName) {
-            setFullName(`${firstName} ${lastName}`.trim());
-        } else {
-            setFullName(''); 
-        }    
-        
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (firstName && lastName) {
+      setFullName(`Full Name: ${firstName} ${lastName}`);
+    } else {
+      setFullName(''); 
     }
-    return(
-        <>
-            <form onSubmit = {handleSubmit}>
-                <h1>Full Name Display</h1>
-                <br/>
-                <label htmlFor = "firstName">First Name :</label>
-                <input type = "text" placeholder="" name ="First Name" id = "firstName" onChange ={(e) => setFirstName(e.target.value)} required/>
-                <br/>                
-                <label htmlFor = "lastName">Last Name :</label>
-                <input type = "text" placeholder="" name ="Last Name" id = "lastName" onChange = {(e) => setLastName(e.target.value)} required/>
-                <br/>
-                <button type = "submit">Submit</button>
-                {fullName && <p>Full Name: {fullName}</p>}
+  };
 
-            </form>
-        </>
-    )
-}
+  return (
+    <div>
+      <h1>Full Name Display</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name:</label>
+        <input
+          type="text"
+          placeholder="First Name"
+          name = "First Name"
+          id = "firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <br/>
+        <label htmlFor="lastName">Last:</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          name = "Last Name"
+          id = "lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <br/>
+        <button type="submit">Submit</button>
+      </form>
+      {fullName && <div>{fullName}</div>}
+    </div>
+  );
+};
+
 export default FullName;
