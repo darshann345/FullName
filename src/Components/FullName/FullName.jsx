@@ -2,15 +2,12 @@ import React,{useState} from 'react';
 const FullName = () =>{
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [fullName, setFullName] = useState('');  
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(firstName,lastName)
-        setFullName(firstName + " " + lastName);
-        setIsSubmitted(true);
+        setFullName(`${firstName} ${lastName}`.trim());
     }
     return(
         <>
@@ -24,8 +21,8 @@ const FullName = () =>{
                 <input type = "text" placeholder="" name ="Last Name" id = "lastName" onChange = {(e) => setLastName(e.target.value)} required/>
                 <br/>
                 <button type = "submit">Submit</button>
-                {isSubmitted && <p>Full Name : {fullName}</p>}
-                
+                {fullName && <p>Full Name : {fullName}</p>}
+
             </form>
         </>
     )
