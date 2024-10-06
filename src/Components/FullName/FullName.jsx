@@ -21,7 +21,7 @@ const FullName = () =>{
                 <input type = "text" placeholder="" name ="Last Name" id = "lastName" onChange = {(e) => setLastName(e.target.value)} required/>
                 <br/>
                 <button type = "submit">Submit</button>
-                {fullName && <p>Full Name : {fullName}</p>}
+                {fullName && <p>Full Name: {fullName}</p>}
 
             </form>
         </>
