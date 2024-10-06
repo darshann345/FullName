@@ -12,9 +12,8 @@ const FullName = () =>{
             setFullName(`${firstName} ${lastName}`.trim());
         } else {
             setFullName(''); 
-        }        
-        setFirstName('');
-        setLastName('');
+        }    
+        
     }
     return(
         <>
