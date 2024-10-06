@@ -4,7 +4,7 @@ const FullName = () =>{
     const [lastName, setLastName] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [fullName, setFullName] = useState('');  
-     
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,6 +15,8 @@ const FullName = () =>{
     return(
         <>
             <form onSubmit = {handleSubmit}>
+                <h1>Full Name Display</h1>
+                <br/>
                 <label htmlFor = "firstName">First Name :</label>
                 <input type = "text" placeholder="" name ="First Name" id = "firstName" onChange ={(e) => setFirstName(e.target.value)} required/>
                 <br/>                
