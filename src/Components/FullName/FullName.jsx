@@ -25,6 +25,7 @@ const FullName = () =>{
                 <br/>
                 <button type = "submit">Submit</button>
                 {isSubmitted && <p>Full Name : {fullName}</p>}
+                
             </form>
         </>
     )
