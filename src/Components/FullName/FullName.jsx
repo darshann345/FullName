@@ -8,6 +8,13 @@ const FullName = () =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         setFullName(`${firstName} ${lastName}`.trim());
+        if (firstName && lastName) {
+            setFullName(`${firstName} ${lastName}`.trim());
+        } else {
+            setFullName(''); 
+        }        
+        setFirstName('');
+        setLastName('');
     }
     return(
         <>
