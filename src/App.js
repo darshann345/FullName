@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FullName = () => {
+const App = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [fullName, setFullName] = useState('');
@@ -45,4 +45,4 @@ const FullName = () => {
   );
 };
 
-export default FullName;
+export default App;
